@@ -1,0 +1,112 @@
+* {
+
+    margin: 0;
+}
+
+/*p {
+    color: blueviolet ;
+}
+#two{
+    color: aqua;
+}
+#first {
+    font-size: 15px;
+}
+.button {
+    font-weight: bold;
+}
+.button > span {
+    color: green;
+}
+
+h1, h2,h3,.button ,#two{
+    font-size: 24px;
+}
+.button  + h1{
+    font-style: italic;
+}
+.button  ~ h2{
+    font-style: italic;
+}
+button{
+    padding: 5px;
+    color: cornflowerblue;
+}
+input[type="text"]{
+    width: 300px;
+}
+a[href*='.com']{
+    color: chocolate;
+}
+*/
+
+/*index.html */
+
+.title {
+    font-size: 16px;
+}
+
+#container {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.text {
+    font-size: 12px;
+    font-weight: bold;
+    color: chocolate;
+}
+
+.special {
+    color: cornflowerblue;
+}
+
+p.special {
+    font-style: italic;
+}
+
+/*form*/
+
+main {
+    background: blueviolet;
+    height: 100vh;
+}
+
+.container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form input {
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+}
+
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box input {
+    margin-top: 10px;
+}
+.btn{
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+.btn-singin{
+    background: #fff;
+}
+.btn-singin:hover{
+    background: #000;
+    color: #fff;
+}

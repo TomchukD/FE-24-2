@@ -1,0 +1,6 @@
+:root {
+    --green: #09a109
+}
+.btn{
+    background: var(--green);
+}
