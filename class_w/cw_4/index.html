@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .bg {
+        background: blueviolet url('./0005.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        width: 450px;
+        height: 550px;
+      }
+      .maxH {
+        height: 70vh;
+        background-color: aqua;
+        position: relative;
+        margin-bottom: 200px;
+      }
+      .position {
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: blueviolet;
+      }
+      .box {
+        width: 50px;
+        height: 50px;
+        background-color: brown;
+        position: absolute;
+        text-align: center;
+        line-height: 50px;
+      }
+      .parentBox {
+        width: 100px;
+        height: 100px;
+      }
+      .sonic {
+        background-image: url('./sonic.png');
+        height: 50px;
+        width: 35px;
+        background-repeat: no-repeat;
+      }
+
+      .sonic_2 {
+        background-position: -36px 0;
+      }
+      .sonic_3 {
+        background-position: -70px 0;
+      }
+
+      .border {
+        width: 150px;
+        height: 150px;
+        background-color: yellowgreen;
+        margin: 10px;
+        border-width: 30px;
+        border-color: aquamarine;
+        border-style: solid;
+        border-radius: 50%;
+        border-image: url('./sonic.png');
+      }
+      .list {
+        list-style-type: upper-roman;
+        list-style-position: inside;
+        text-decoration: underline;
+      }
+      .und {
+        text-decoration: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+    7.4 Позиціювання +
+    8.1 Накладення (z-index)+ 
+    8.2 Властивості фону, спрайти
+    8.3 межі
+    8.4 Стилізація списків 
+    -->
+    <div style="margin: 50px">
+      <ul class="list">
+        <li>text</li>
+        <li>text</li>
+        <li>
+          asdasd
+          <ul class="list">
+            <li>text1111</li>
+            <li>text1111</li>
+            <li>text1111</li>
+            <li>text1111</li>
+            <li>text1111</li>
+          </ul>
+        </li>
+        <li>text</li>
+        <li>text</li>
+      </ul>
+    </div>
+
+    <div
+      style="
+        margin: 10px;
+        border: 3px solid;
+        padding: 10px;
+        background-color: aquamarine;
+      "
+    >
+      text
+    </div>
+    <div
+      style="margin: 10px; padding: 10px; background-color: rgb(127, 127, 255)"
+    >
+      text
+    </div>
+
+    <button
+      style="
+        border-style: none;
+        width: 100px;
+        border-radius: 6px;
+        padding: 10px;
+      "
+    >
+      click
+    </button>
+    <div class="border"></div>
+
+    <div class="sonic sonic_1"></div>
+    <div class="sonic sonic_2"></div>
+    <div class="sonic sonic_3"></div>
+
+    <div class="bg">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptatum
+      id deleniti iusto facere doloremque aperiam, incidunt repellat similique
+      quos inventore dolor fuga sint magnam excepturi! Odio nihil consequatur
+      odit!
+    </div>
+    <!-- <div class="maxH parentBox">
+      <div style="z-index: 999; left: 0; top: 0" class="box">1</div>
+      <div style="top: 0; right: 0" class="box">2</div>
+      <div style="left: 0; bottom: 0" class="box">3</div>
+      <div style="z-index: 1000; bottom: 0; right: 0" class="box">4</div>
+      <div
+        style="z-index: 998; top: 25%; left: 25%; background-color: aquamarine"
+        class="box"
+      >
+        5
+      </div>
+    </div> -->
+    <div class="maxH sticky">
+      <a class="position">position</a>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit tempora
+        praesentium perspiciatis ipsam, distinctio possimus autem aut, quod
+        officia a illum optio beatae suscipit. Officiis amet iusto repellendus
+        aliquam omnis.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit tempora
+        praesentium perspiciatis ipsam, distinctio possimus autem aut, quod
+        officia a illum optio beatae suscipit. Officiis amet iusto repellendus
+        aliquam omnis.
+      </p>
+    </div>
+    <div class="maxH">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit tempora
+        praesentium perspiciatis ipsam, distinctio possimus autem aut, quod
+        officia a illum optio beatae suscipit. Officiis amet iusto repellendus
+        aliquam omnis.
+      </p>
+    </div>
+    <div class="maxH">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit tempora
+        praesentium perspiciatis ipsam, distinctio possimus autem aut, quod
+        officia a illum optio beatae suscipit. Officiis amet iusto repellendus
+        aliquam omnis.
+      </p>
+    </div>
+  </body>
+</html>
