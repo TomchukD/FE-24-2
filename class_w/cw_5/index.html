@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            padding: 5px;
+            border-radius: 8px;
+            border-width: 5px;
+            border-style: solid;
+        }
+
+        /* стилязація активного елемента форми*/
+        input:focus {
+            outline: none;
+        }
+
+        input:required:invalid {
+            border-color: red;
+        }
+
+        input:required:valid {
+            border-color: green;
+        }
+
+        input:hover {
+            border: 4px solid #c5a318;
+        }
+
+        .btn {
+            background: #09a109;
+        }
+
+        /* зміна стилю при наведенні */
+        .btn:hover {
+            background: #00bcd4;
+        }
+
+        .btn:disabled {
+            background: grey;
+        }
+
+        /*
+        even - парний
+        odd - не парний
+        */
+        .nth > li:nth-child(even) {
+            color: red;
+        }
+
+        .nth > li:nth-child(3n +3) {
+            background: rgba(0, 0, 255, 0.24);
+        }
+
+        .nth > li:first-child {
+            font-size: 28px;
+        }
+
+        .nth > li:last-child {
+            font-size: 28px;
+        }
+
+        .nth > li:nth-last-child(2) {
+            font-weight: bold;
+        }
+
+        .checkbox:checked + label {
+            background: red;
+        }
+
+        .btn:not(.active) {
+            background: blue;
+        }
+
+        .active {
+            background: blueviolet;
+        }
+
+        .beforeAfter {
+            position: relative;
+            ;
+        }
+
+        .beforeAfter::before {
+            content: '"';
+            font-size: 20px;
+            color: orange;
+
+        }
+
+        .beforeAfter::after {
+            content: '"';
+            font-size: 20px;
+            color: orange;
+        }
+        .beforeAfter::first-line{
+            color: orange;
+        } .beforeAfter::first-letter{
+            color: red;
+        }
+          .beforeAfter::selection{
+              color: blue;
+          }
+
+         body{
+             counter-reset: section-counter p-counter;
+         }
+         .section{
+             counter-increment: section-counter;
+         }
+         .section h2::before{
+             content: "Заголовок " counter(section-counter) ":";
+         }
+        .section p{
+            counter-increment: p-counter;
+        }
+         .section p::before{
+             content: "Абзац "counter(p-counter) "-";
+         }
+    </style>
+</head>
+<!--
+
+Стилізація форм
+псевдокласси специфічні селектори
+псевдоелементи
+-->
+<body>
+<form action="">
+    <label>
+        <input type="text" required>
+    </label>
+
+    <input class="checkbox" hidden id="checkbox1" type="checkbox">
+
+    <label for="checkbox1">
+        😒
+    </label>
+    <button class="btn active">click</button>
+</form>
+
+<p class="beforeAfter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto id iure neque quas sapiente?
+    Aliquid, blanditiis dicta illum laborum quisquam repudiandae suscipit ut voluptas. A cumque exercitationem laborum
+    quibusdam veritatis.</p>
+
+
+<ul class="nth">
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+</ul>
+
+
+<div class="section">
+    <h2>slect</h2>
+    <p>text</p>
+</div>
+<div class="section">
+    <h2>select 2</h2>
+    <p>text 2</p>
+</div>
+
+<!--before after-->
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        * {
+            margin: 0;
+            bottom: 0;
+            box-sizing: border-box;
+        }
+
+        .acardeon {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+
+        .acardeon-item {
+            border-bottom: 1px solid black;
+        }
+
+        .acardeon-item:last-child {
+            border-bottom: none;
+        }
+
+        .acardeon-item .acardeon-chekbox {
+            display: none;
+        }
+
+        .acardeon-head {
+            display: block;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.07);
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .acardeon-head:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .acardeon-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+            padding: 0 15px;
+        }
+
+        .acardeon-chekbox:checked + .acardeon-head + .acardeon-content {
+            max-height: 200px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="acardeon">
+    <div class="acardeon-item">
+        <input class="acardeon-chekbox" type="checkbox" id="radio-1" name="radio-1">
+        <label class="acardeon-head" for="radio-1">Питання 1</label>
+        <div class="acardeon-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt ex illum magni maxime
+                nulla,
+                quam quia sequi. Excepturi fugit iste itaque mollitia nostrum quas saepe sequi similique temporibus
+                ut?</p>
+        </div>
+    </div>
+    <div class="acardeon-item">
+        <input class="acardeon-chekbox" type="checkbox" id="radio-2" name="radio-1">
+        <label class="acardeon-head" for="radio-2">Питання 2</label>
+        <div class="acardeon-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt ex illum magni maxime
+                nulla,
+                quam quia sequi. Excepturi fugit iste itaque mollitia nostrum quas saepe sequi similique temporibus
+                ut?</p>
+        </div>
+    </div>
+    <div class="acardeon-item">
+        <input class="acardeon-chekbox" type="checkbox" id="radio-3" name="radio-1">
+        <label class="acardeon-head" for="radio-3">Питання 3</label>
+        <div class="acardeon-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt ex illum magni maxime
+                nulla,
+                quam quia sequi. Excepturi fugit iste itaque mollitia nostrum quas saepe sequi similique temporibus
+                ut?</p>
+        </div>
+    </div>
+
+
+</div><div class="acardeon">
+    <div class="acardeon-item">
+        <input class="acardeon-chekbox" type="checkbox" id="radio-4" name="radio-1">
+        <label class="acardeon-head" for="radio-4">Питання 4</label>
+        <div class="acardeon-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt ex illum magni maxime
+                nulla,
+                quam quia sequi. Excepturi fugit iste itaque mollitia nostrum quas saepe sequi similique temporibus
+                ut?</p>
+        </div>
+    </div>
+    <div class="acardeon-item">
+        <input class="acardeon-chekbox" type="checkbox" id="radio-5" name="radio-1">
+        <label class="acardeon-head" for="radio-5">Питання 5</label>
+        <div class="acardeon-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt ex illum magni maxime
+                nulla,
+                quam quia sequi. Excepturi fugit iste itaque mollitia nostrum quas saepe sequi similique temporibus
+                ut?</p>
+        </div>
+    </div>
+    <div class="acardeon-item">
+        <input class="acardeon-chekbox" type="checkbox" id="radio-6" name="radio-1">
+        <label class="acardeon-head" for="radio-6">Питання 6</label>
+        <div class="acardeon-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt ex illum magni maxime
+                nulla,
+                quam quia sequi. Excepturi fugit iste itaque mollitia nostrum quas saepe sequi similique temporibus
+                ut?</p>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
