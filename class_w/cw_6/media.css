@@ -1,0 +1,21 @@
+@media (max-width: 998px) {
+    h1{
+        font-size: 5em;
+        color: #4fc3f7;
+    }
+    p{
+        color: red;
+    }
+    .container{
+        max-width: 850px;
+    }
+}
+
+@media (max-width:545px) {
+    body{
+        font-size: 8px;
+    }
+    .container{
+        max-width: 450px;
+    }
+}
