@@ -1,0 +1,20 @@
+@media (max-width: 991px){
+    body{
+        font-size: 15px;
+    }
+    .container{
+        max-width: 900px;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .col{
+        width: 100%;
+    }
+    .section-one{
+        text-align: center;
+    }
+    .section-one button{
+        margin: 0 auto;
+    }
+}

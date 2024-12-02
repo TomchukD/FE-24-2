@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вивчаємо CSS: Блоки і Шрифти</title>
+    <!-- Шрифт із Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Локальні шрифти */
+        @font-face {
+            font-family: 'LocalSans';
+            src: local('Arial');
+        }
+
+        @font-face {
+            font-family: 'LocalSerif';
+            src: local('Times New Roman');
+        }
+
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+
+        /* Головний блок */
+        .main-container {
+            width: 100%;
+            height: 300px;
+            background-color: #b3e5fc;
+            font-family: 'LocalSans', sans-serif;
+            font-size: 1rem; /* Базовий розмір тексту */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Вкладений блок 1-го рівня */
+        .nested-1 {
+            width: 70%;
+            height: 200px;
+            background-color: #81d4fa;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem; /* Відносно базового розміру */
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* Вкладений блок 2-го рівня */
+        .nested-2 {
+            width: 50%;
+            height: 150px;
+            background-color: #4fc3f7;
+            font-family: 'LocalSerif', serif;
+            font-size: 1.5em; /* Відносно вкладеного блоку 1-го рівня */
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Текст */
+        h1 {
+            font-size: 2em; /* Відносно батьківського блоку */
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem; /* Відносно body */
+            margin: 5px 0;
+        }
+
+        span {
+            font-size: 14px; /* Абсолютний розмір */
+            color: #00796b;
+        }
+    </style>
+</head>
+<body>
+<!-- Головний блок -->
+<div class="main-container">
+    <h1>Головний блок</h1>
+    <p>Шрифт: Arial (локальний)</p>
+</div>
+
+<!-- Вкладений блок 1-го рівня -->
+<div class="nested-1">
+    <h1>Вкладений блок 1-го рівня</h1>
+    <p>Шрифт: Montserrat (Google Fonts)</p>
+    <span>Відносний розмір тексту: 1.2rem</span>
+</div>
+
+<!-- Вкладений блок 2-го рівня -->
+<div class="nested-2">
+    <h1>Вкладений блок 2-го рівня</h1>
+    <p>Шрифт: Times New Roman (локальний)</p>
+    <span>Абсолютний розмір: 14px</span>
+</div>
+</body>
+</html>
