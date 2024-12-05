@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+.parent{
+    display: flex;
+    height: 500px;
+    border: 1px solid #000;
+    flex-wrap: wrap;
+}
+.child{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child:nth-child(odd){
+    background: green;
+    height: 50px;
+}
+.child:nth-child(even){
+    background: grey;
+    height: 70px;
+}
