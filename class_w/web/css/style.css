@@ -126,24 +126,31 @@ body {
     display: flex;
     flex: 1;
 }
-.service_info:nth-last-child(1){
+
+.service_info:nth-last-child(1) {
     flex: none
 }
-.service_info_black{
+
+.service_info_black {
     background: var(--dark);
 }
-.service_info_green{
+
+.service_info_green {
     background: var(--green);
 }
-.service_info_grey{
+
+.service_info_grey {
     background: var(--grey);
 }
-.service_info_green h2, .service_info_black h2{
+
+.service_info_green h2, .service_info_black h2 {
     background: var(--white) !important;
 }
-.service_info_black  .btn_more > div{
+
+.service_info_black .btn_more > div {
     background: var(--white) !important;
 }
+
 .service_info__text {
     display: flex;
     flex-direction: column;
@@ -171,19 +178,22 @@ body {
     align-items: center;
     background: #000;
 }
-.btn_more > div::before{
-    content:  '';
+
+.btn_more > div::before {
+    content: '';
     display: block;
     background-image: url('../img/Arrow_b.svg');
     width: 100%;
-    height:  100%;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
-.service_info_black .btn_more a{
+
+.service_info_black .btn_more a {
     color: var(--white);
 }
-.service_info_black .btn_more > div::before{
+
+.service_info_black .btn_more > div::before {
     background-image: url('../img/Arrow_w.svg');
 }
 
@@ -193,85 +203,195 @@ body {
     color: var(--black);
     padding-left: 15px;
 }
-.section-four{
+
+.section-four {
     max-height: 347px;
     padding: 23px 0;
 
 }
 
-.happy{
+.happy {
     padding: 60px;
     border-radius: 45px;
     background: var(--grey);
 }
 
-.happy_lets{
+.happy_lets {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
 }
-.happy_lets h3{
+
+.happy_lets h3 {
     font-size: 1.8em;
 }
-.happy_lets p{
+
+.happy_lets p {
     padding: 26px 0;
 }
-.happy_img{
+
+.happy_img {
     position: relative;
 
 }
-.happy_img img{
+
+.happy_img img {
     position: absolute;
     top: -50%;
     right: 0;
 }
 
 
-.section-five{
+.section-five {
     padding: 140px 0;
 }
 
-.case-label{
+.case-label {
     display: flex;
     align-items: center;
 }
-.case-title{
+
+.case-title {
     font-size: 2.5em;
 }
-.case-text{
+
+.case-text {
     max-width: 580px;
     padding-left: 40px;
 }
-.case-content{
+
+.case-content {
     background: var(--dark);
     border-radius: 45px;
     color: var(--white);
     padding: 70px 60px;
 }
-.case-box{
+
+.case-box {
     width: calc(100% / 3);
 
 }
+
 .case-box p {
     margin-bottom: 20px;
 }
-.link-arrow{
+
+.link-arrow {
     color: var(--green);
     font-size: 1.2em;
     text-decoration: none;
     position: relative;
 }
-.link-arrow::before{
-    content:  '';
+
+.link-arrow::before {
+    content: '';
     display: block;
     background-image: url('../img/Arrow_b.svg');
     width: 21px;
     position: absolute;
     top: 0;
     right: -40px;
-    height:  21px;
+    height: 21px;
     background-position: center;
     background-repeat: no-repeat;
+
+}
+
+/*footer*/
+
+.footer {
+    border-radius: 45px 45px 0 0;
+    background: var(--dark);
+    padding: 60px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-soc {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+
+}
+
+.footer-soc a {
+    transition: 0.3s;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.footer-soc a:hover {
+    background: var(--green);
+}
+
+.footer-navigation {
+    display: flex;
+    gap: 10px;
+
+}
+
+.footer-navigation a {
+    padding: 20px;
+    color: var(--white);
+    transition: .3s;
+    font-size: 1.2em
+
+}
+
+.footer-navigation a:hover {
+    color: var(--green);
+
+}
+.footre-contant{
+    padding: 65px 0 55px 0;
+}
+.footer-form__lable{
+}
+.footer-form__lable input{
+    border-radius: 14px;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 1.3em;
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+
+.footer-form{
+    padding: 60px 40px;
+    background: #292A32;
+    border-radius: 14px;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-cont{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--white);
+}
+.footer-cont a{
+    color: var(--white);
+    font-size: 1.2em;
+    text-decoration: none;
+}
+.footer-copyright{
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    color: var(--white);
+}
+.footer-copyright a{
+    color: var(--white);
 
 }
