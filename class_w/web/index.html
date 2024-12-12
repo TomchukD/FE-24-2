@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
 </head>
@@ -39,7 +41,7 @@
 </div>
 <div class="section-two">
     <div class="container">
-        <div class="row ">
+        <div class="row store">
             <div class="col-2"><img class="margin-0 " src="./img/Company/Company%20logo.png" alt=""></div>
             <div class="col-2"><img class="margin-0 " src="./img/Company/Company%20logo-1.png" alt=""></div>
             <div class="col-2"><img class="margin-0 " src="./img/Company/Company%20logo-2.png" alt=""></div>
@@ -132,6 +134,35 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<div class="container section-contact">
+        <form class="contact-form">
+            <div class="contant-select">
+                <label>
+                    <input name="rad" type="radio">
+                    Say Hi
+                </label>
+                <label>
+                    <input name="rad" type="radio">
+                    Get a Quote
+                </label>
+            </div>
+            <label class="contant-label">
+                Name
+                <input type="text" placeholder="Name">
+            </label>
+            <label class="contant-label">
+                Email*
+                <input type="email" placeholder="Email" required>
+            </label>
+            <label class="contant-label">
+                Message*
+                <textarea placeholder="Message"></textarea>
+            </label>
+            <button id="form_send" class="btn btn_bg-b">Send Message</button>
+        </form>
 </div>
 <footer class="footer container">
     <div class="footer-nav">

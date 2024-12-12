@@ -20,7 +20,6 @@ body {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    border: 1px solid;
 }
 
 .margin-0 {
@@ -298,6 +297,58 @@ body {
 
 }
 
+/*contant us*/
+.section-contact{
+    padding: 60px 100px;
+    background: var(--grey);
+    border-radius: 45px;
+    margin-bottom: 140px;
+    position: relative;
+    overflow: hidden;
+}
+.section-contact::before{
+    content: '';
+    display: block;
+    background-image: url('../img/form.png');
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -20%;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    max-width: 556px;
+    width: 100%;
+    gap: 25px;
+}
+
+.contant-select{
+    display: flex;
+    gap: 35px;
+}
+.contant-select label input{
+    padding: 0 7px;
+}
+
+.contant-label{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contant-label input, .contant-label textarea{
+    padding: 18px 30px;
+    border-radius: 8px;
+    border: 1px solid var(--dark);
+    font-size: 1.25em;
+}
+.contant-label textarea{
+    min-height: 190px;
+    max-width: 100%;
+}
 /*footer*/
 
 .footer {
