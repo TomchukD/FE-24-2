@@ -106,7 +106,46 @@ body {
 .section-two {
     margin-top: 70px;
 }
+.section-three{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto !important;
+}
+.section-three::before, .section-three::after {
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 120px;
+    height: 120px;
+    animation: slide 4s linear infinite;
+    position: absolute;
 
+    opacity: 0.4;
+}
+
+.section-three::before{
+    top: 30%;
+    background-image: url('../img/star1.png');
+    left: -150px;
+    animation-delay: 1s;
+}
+.section-three::after{
+    top: 45%;
+    background-image: url('../img/star2.png');
+    right: -150px;
+    animation-delay: 2s;
+}
+@keyframes slide {
+    0%{
+        transform: translateY(0px) scale(0.4);
+    }
+    50%{
+        transform: translateY(50px) scale(0.4);
+    }
+    100%{
+        transform: translateY(0) scale(0.4);
+    }
+}
 .section-two img {
     display: block;
     filter: grayscale(100%);

@@ -1,0 +1,62 @@
+.navbar{
+    margin: 100px;
+    position: relative;
+    width: 450px;
+    height: 70px;
+    background: #1e272e;
+    border-radius: 10px;
+}
+.navbar ul{
+    display: flex;
+    width: 350px;
+
+}
+.navbar ul li{
+    list-style: none;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+
+}
+.navbar ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    font-weight: 500;
+    color: #fff3cd;
+    text-decoration: none;
+    transition: 0.5s;
+    height: 100%;
+}
+
+
+.list.active > .link{
+    transform: translateY(-32px);
+    opacity: 1;
+}
+.list > .link{
+}
+.list .text{
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    transition: 0.5s;
+    transform: translateY(20px);
+}
+
+.list.active .text{
+    opacity: 1;
+    transform: translateY(60px);
+}
+.list.active  .icon{
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #8686d4;
+    border-radius: 50%;
+}
