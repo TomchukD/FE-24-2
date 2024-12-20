@@ -1,0 +1,154 @@
+:root {
+  --bs-btn-bg:#091D9E;
+  --text-p:#750DC5;
+  --text-g:#BCC5FF;
+  --text-w:#F6F6F6;
+  --text-gray:#C1C1C1;
+  --text-black:#0C0C0C;
+  --text-o:#EBBA1A;
+  --text-linear: linear-gradient(#260DC1, #59006F);
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+.header-nav {
+  border-bottom: 1px solid #C1C1C1;
+  padding-bottom: 20px;
+}
+
+.cotalog-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--text-g);
+  padding: 20px 55px;
+  border-radius: 8px;
+}
+.cotalog-item_text {
+  margin-top: 12px;
+  text-align: center;
+  display: block;
+}
+
+.card-image {
+  position: relative;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-sale {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  background: var(--text-o);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.card-btn-control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  border: 1px solid var(--text-gray);
+  padding: 0;
+  background: transparent;
+  transition: all 0.1s ease;
+}
+.card-btn-control_active {
+  border: none;
+  background: var(--bs-btn-bg) !important;
+}
+.card-btn-control:hover {
+  background: var(--text-g);
+}
+
+.card-product {
+  margin-bottom: 20px;
+}
+
+.card-price_first {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-black);
+}
+.card-price_last {
+  font-size: 14px;
+  color: var(--text-gray);
+  text-decoration: line-through;
+}
+
+.btn-shadow {
+  box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.1098039216);
+}
+
+.card-availability {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-availability_sacses {
+  font-size: 14px;
+  color: #169b00;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.navigation {
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+.navigation > .btn {
+  font-size: 32px;
+}
+
+.breadcrumbs {
+  color: rgba(171, 171, 171, 0.6705882353);
+  padding-bottom: 32px;
+}
+.breadcrumbs span:last-child {
+  color: #454545;
+}
+
+.btn > .icon {
+  padding-right: 20px;
+}
+
+.filter {
+  max-width: 290px;
+  width: 100%;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3058823529);
+  padding: 16px;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,50 @@
+@use "_tools";
+
+:root {
+    --primary-color: #332255;
+}
+
+$primary-color: var(--primary-color);
+$fontSize: 18px;
+
+.gallery {
+    padding: 0;
+    background: $primary-color;
+    width: (300px + $fontSize) + ($fontSize * 2);
+    height: 300px;
+    @include tools.f-center;
+    font-size: scale-color(grey, $lightness: +15%);
+    &-item {
+        width: 28px;
+        height: 28px;
+        &-w {
+            background: #000;
+        }
+        &::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+.btn {
+    padding: 10px;
+    border: none;
+}
+
+.primary-button {
+    @extend .btn;
+    background: lighten($color: #0edb14, $amount: 11%);
+}
+.warn-button {
+    @extend .btn;
+    // background: darken($color: #c90606, $amount: 25%);
+    background: rgba(#c90606, 25%);
+    background: mix(#000, blue, 51%);
+}
+
+@include tools.generate-margin(margin, 5);
+@include tools.generate-margin(margin-left, 5);
+@include tools.generate-margin(margin-right, 5);
+@include tools.generate-margin(padding, 5);

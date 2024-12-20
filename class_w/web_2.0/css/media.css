@@ -1,0 +1,94 @@
+@media screen and (max-width: 768px) {
+
+    /* Зменшує розмір шрифтів на мобільних пристроях */
+    html,
+    body {
+        font-size: 15px;
+    }
+
+    /* Центрує заголовки, тексти і кнопки, змінює їх розташування на вертикальне */
+    .img-company, .label-title, .team-btn {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .navigation-head >.btn-outline-secondary{
+      padding: 1rem 1.5rem;
+    }
+
+    .navigation-head >.navbar-brand{
+        font-size: 1rem !important;
+    }
+    
+    .cases-studies, .head-info{
+     display: flex;
+     flex-direction: column;
+   }
+
+    /* Зменшує внутрішні відступи для мобільних пристроїв */
+    .cases-studies, .form-contact-us {
+        padding: 3.3rem;
+    }
+
+    .footer, .card-happen {
+        padding: 2rem;
+    }
+    
+    /* Приховує декоративні елементи, які не потрібні на маленьких екранах */
+    .social-top, .img-frame, .vertical-line, .form-contact-us::after {
+        display: none !important;
+    }
+
+    /* Робить навігацію, списки і футер вертикальними, вирівнює їх по центру */
+    .information, .navigation, .list-a, .form-b, .footer-prvt-policy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer {
+        border-radius: 0;
+    }
+
+    /* Переміщує соціальні іконки вниз і центрує їх */
+    .social-bottom {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+     /* Зменшує розміри декоративних символів у акордеоні */
+    .accordion-item .accord::after {
+        width: 40px;
+        height: 40px;
+    }
+
+     /* Прибирає відступи для посилань у навігації */
+    .navbar-brand{
+        margin: 0;
+    }
+
+    .form-b .input-foot {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    /* Приховує декоративний символ "плюс/мінус" в акордеоні */
+    .accordion-item .accord::after {
+        display: none;
+    }
+
+    .accordion-item .accord:not(.collapsed)::after{
+        display: none;
+    }
+
+     /* Робить поля вводу в футері шириною 100% */
+    .form-b .input-foot {
+        width: 100%;
+    }
+}

@@ -1,0 +1,13 @@
+@mixin f-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin generate-margin($props, $range) {
+    @for $i from 0 through $range {
+        .#{$props}-#{$i} {
+            #{$props}: $i * 4px;
+        }
+    }
+}
