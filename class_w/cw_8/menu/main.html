@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+<nav class="navbar">
+    <ul>
+        <li class="list active">
+
+            <a class="link" href="#">
+                <span class="icon material-symbols-outlined">home</span>
+
+                <span class="text">Home</span>
+            </a>
+        </li>
+        <li class="list">
+            <a class="link" href="#">
+                <span class="icon material-symbols-outlined">menu_book</span>
+
+                <span class="text">About</span>
+            </a>
+        </li>
+        <li class="list">
+            <a class="link" href="#">
+                <span class="icon material-symbols-outlined">bookmark_check</span>
+
+                <span class="text">Contact us</span></a>
+        </li>
+        <li class="list">
+
+            <a class="link" href="#">
+                <span class="icon material-symbols-outlined">settings</span>
+                <span class="text">Setting</span></a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    const list = document.querySelectorAll('.list');
+
+    function active() {
+
+        list.forEach(element => {
+            element.classList.remove('active')
+        });
+        this.classList.add('active');
+    }
+
+    list.forEach(element => {
+        element.addEventListener('click', active);
+    });
+</script>
+</body>
+</html>
