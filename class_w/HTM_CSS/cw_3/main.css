@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'MyFamily123123';
+    src: url('fonts/Roboto-Light.ttf') format('ttf'), url("fonts/Roboto-Light.woff")  format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
