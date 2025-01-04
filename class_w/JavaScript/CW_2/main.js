@@ -129,3 +129,16 @@ function getS(day) {
              return  'Маленька пятниця';
     }
 }
+
+
+const size = 8;
+const whileCell = '⬜';
+const blackCell = '⬛';
+
+for (let row = 0; row < size; row++) {
+    let line  = '';
+    for (let col = 0; col < size; col++) {
+        line  += (row + col) % 2 === 0 ? blackCell : whileCell
+    }
+    console.log(line)
+}
