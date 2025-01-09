@@ -78,4 +78,4 @@ console.log(obj1);   // Очікується: { a: 1, b: 2 } (не має змі
 ```
 
 ---
-
+practical https://www.jsv9000.app/
