@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .tabs-header {
+        display: flex;
+        border-bottom: 1px solid black;
+    }
+
+    .tab {
+        padding: 10px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        background: #f9f9f9;
+    }
+
+    .tab.active {
+        background: #fff;
+        font-weight: bold;
+    }
+    .tabs-contents {
+
+    }
+    .tab-content {
+        display: none;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+</style>
+<body>
+<script>
+
+    const createElement = (selector, className) => {
+        const elem = document.createElement(selector);
+        elem.className = className;
+        return elem;
+    }
+    const tabsContainer = createElement('div', 'tabs-container')
+    const tabs = createElement('div', 'tabs-header')
+    const tabsContents = createElement('div', 'tabs-contents')
+    for (let i = 1; i <= 3; i++) {
+        createTabsHead(i)
+        createTabsContent(i)
+    }
+    function createTabsContent(i) {
+        const tab = createElement('div', 'tab')
+        if (i === 1) {
+            tab.classList.add('active');
+        }
+        tab.setAttribute('data-tab', i);
+        tab.textContent = `Tab index: ${ i }`;
+        tab.addEventListener('click', () => switchTabs(i))
+        tabs.appendChild(tab);
+    }
+    function createTabsHead(i) {
+        const tabContent = createElement('div', 'tab-content')
+        if (i === 1) {
+            tabContent.classList.add('active')
+        }
+        tabContent.textContent = `Tab index: ${ i }`;
+        tabContent.id = `tab-${ i }`;
+        tabsContents.appendChild(tabContent);
+    }
+    tabsContainer.appendChild(tabs);
+    tabsContainer.appendChild(tabsContents);
+    document.body.appendChild(tabsContainer);
+
+function switchTabs(index) {
+    const allTabsHead = document.querySelectorAll('.tab');
+    const allContents = document.querySelectorAll('.tab-content');
+    allTabsHead.forEach(tab=> tab.classList.remove('active'))
+    allContents.forEach(tab=> tab.classList.remove('active'))
+
+
+    const selectTab = document.querySelector(`.tab[data-tab="${index}"]`);
+    const selectContent = document.getElementById(`tab-${index}`);
+    selectTab.classList.add('active')
+    selectContent.classList.add('active')
+}
+
+
+</script>
+
+
+</body>
+</html>

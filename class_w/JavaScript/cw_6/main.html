@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="one" style="height: 100vh">1</div>
+<div id="two" class="className" style="height: 100vh">2<a href="">aAAAAAAAAAAAAAAAAAA</a></div>
+<div id="three" class="className" style="height: 100vh">3</div>
+<div id="four" style="height: 100vh" >4<a href="">aAAAAAAAAAAAAAAAAAA</a></div>
+<div  class="className" style="height: 100vh"><a href="">aAAAAAAAAAAAAAAAAAA</a></div>
+
+
+
+<div class="tabs">
+    <div class="tab ">1</div>
+    <div class="tab active">
+        <ul>
+            <li>li 1</li>
+        </ul>
+    </div>
+    <div class="tab">3</div>
+</div>
+<script>
+
+const getElemByID = document.getElementById('three')
+const getElemByClassName = document.getElementsByClassName('className')
+const getByTag = document.getElementsByTagName('a');
+
+const getQueryID = document.querySelector('#four');
+const getQueryClass = document.querySelector('.className');
+const getQueryClassAll = document.querySelectorAll('a');
+const getQuerytag_A = document.querySelector('div.tab.active');
+console.log(getQuerytag_A)
+
+const newTabByA=  document.createElement('a');
+const text = 'Hello World'
+newTabByA.innerHTML = `<syb>${text}</syb>`;
+newTabByA.setAttribute('data-id', 'helooID')
+newTabByA.href = `https://google.com`
+
+const parentTab = document.querySelector('.tab.active')
+parentTab.prepend(newTabByA)
+
+console.log(newTabByA)
+
+setTimeout(function(){
+    newTabByA.remove()
+
+},5000)
+</script>
+</body>
+</html>
