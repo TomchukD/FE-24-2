@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+</head>
+<style>
+  .tabs-header {
+    display: flex;
+    border-bottom: 1px solid black;
+  }
+
+  .tab {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background: #f9f9f9;
+  }
+
+  .tab.active {
+    background: #fff;
+    font-weight: bold;
+  }
+
+  .tabs-contents {
+
+  }
+
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+  .slider-container{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    max-width: 600px;
+    overflow: hidden;
+  }
+  .slide img{
+    width: 100%;
+  }
+</style>
+<body>
+<div id="asd" class="tabs-container">
+  <div class="tabs-header">
+    <div class="tab active" data-tab="1">Tab index: 1</div>
+    <div class="tab" data-tab="2">Tab index: 2</div>
+    <div class="tab" data-tab="3">Tab index: 3</div>
+  </div>
+  <div class="tabs-contents">
+    <div class="tab-content active" id="tab-1">Tab index: 1</div>
+    <div class="tab-content" id="tab-2">Tab index: 2</div>
+    <div class="tab-content" id="tab-3">Tab index: 3</div>
+  </div>
+</div>
+
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide">
+      <img src="./img/0001.jpg" alt="">
+    </div> <div class="slide">
+      <img src="./img/0002.jpg" alt="">
+    </div> <div class="slide">
+      <img src="./img/0003.jpg" alt="">
+    </div> <div class="slide">
+      <img src="./img/0004.jpg" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/0005.jpg" alt="">
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+// $('.tab').on('click', function (e) {
+//   $('.tab').removeClass('active');
+//   $('.tab-content').removeClass('active');
+//   $(this).addClass('active');
+//
+//   const tabID = $(this).data('tab');
+//   $(`#tab-${tabID}`).addClass('active');
+// })
+//
+// $.ajax({
+//   url: 'https://api.chucknorris.io/jokes/random',
+//   type: 'GET',
+//   dataType: 'json',
+//   success: function (data) {
+//     console.log(data)
+//   },
+//   error: function (err) {
+//     console.log(err);
+//   }
+// })
+//  $.get('https://api.chucknorris.io/jokes/random', {id: 123}, function (data) {
+//    console.log(data)
+//  })
+
+$('.slider').slick({
+  infinite: true,
+  autoplay: true,
+  speed: 500,
+  dots: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  buttons: false,
+  autoplaySpeed: 1000,
+})
+</script>
+</body>
+</html>

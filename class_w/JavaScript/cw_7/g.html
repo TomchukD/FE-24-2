@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #previewContaner {
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        border: 1px solid #adaaaa;
+        padding: 5px;
+    }
+
+    .imgViev {
+        width: 100px;
+        height: 100px;
+        border-radius: 8%;
+    }
+
+    .downloadImg {
+        border: 1px dotted black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<body>
+<p id="countText">Upload: 0 of 10</p>
+<div id="previewContaner">
+    <label class="downloadImg imgViev">
+        <input type="file" id="ImgInput" multiple hidden="" accept="image/*">
+        Download
+    </label>
+</div>
+
+
+<script type="text/javascript">
+    // 1 коли нема картинок, нема і лічильника
+    // 2 в "countText" вписувати кількість завантажених файлів, я зупитянись на 10
+    // коли юзер хоче завантажити більше 10 картинок завантажити перші 10, а після цього показати помилку
+
+    const imgInput = document.getElementById('ImgInput');
+    const previewContaner = document.getElementById('previewContaner');
+
+    imgInput.addEventListener('change', function (e) {
+        const files = e.target.files;
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.classList.add('imgViev');
+                previewContaner.prepend(img);
+            }
+            reader.readAsDataURL(file);
+        }
+    })
+
+</script>
+</body>
+</html>

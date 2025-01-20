@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .tabs-header {
+        display: flex;
+        border-bottom: 1px solid black;
+    }
+
+    .tab {
+        padding: 10px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        background: #f9f9f9;
+    }
+
+    .tab.active {
+        background: #fff;
+        font-weight: bold;
+    }
+
+    .tabs-contents {
+
+    }
+
+    .tab-content {
+        display: none;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+    #box{ width: 200px; height:200px;
+        background: red;}
+
+</style>
+<body>
+<input id="textI" type="text">
+<button id="sub">Click</button>
+<p id="text">
+
+</p>
+<div id="box" ></div>
+<script>
+    const inp = document.querySelector('#textI');
+    const btn = document.querySelector('#sub');
+    const p = document.querySelector('#text');
+    btn.addEventListener('click', function () {
+      const text = inp.value.trim();
+      if(text){
+          p.textContent = text;
+      ipn.value = '';
+      }else {
+          p.textContent = 'Empty';
+      }
+    })
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     const createElement = (selector, className) => {
+    //         const elem = document.createElement(selector);
+    //         elem.className = className;
+    //         return elem;
+    //     }
+    //     const tabsContainer = createElement('div', 'tabs-container')
+    //     const tabs = createElement('div', 'tabs-header')
+    //     const tabsContents = createElement('div', 'tabs-contents')
+    //     for (let i = 1; i <= 3; i++) {
+    //         createTabsHead(i)
+    //         createTabsContent(i)
+    //     }
+    //
+    //     function createTabsContent(i) {
+    //         const tab = createElement('div', 'tab')
+    //         if (i === 1) {
+    //             tab.classList.add('active');
+    //         }
+    //         tab.setAttribute('data-tab', i);
+    //         tab.textContent = `Tab index: ${ i }`;
+    //         tab.addEventListener('click', () => switchTabs(i))
+    //         tabs.appendChild(tab);
+    //     }
+    //
+    //     function createTabsHead(i) {
+    //         const tabContent = createElement('div', 'tab-content')
+    //         if (i === 1) {
+    //             tabContent.classList.add('active')
+    //         }
+    //         tabContent.textContent = `Tab index: ${ i }`;
+    //         tabContent.id = `tab-${ i }`;
+    //         tabsContents.appendChild(tabContent);
+    //     }
+    //
+    //     tabsContainer.appendChild(tabs);
+    //     tabsContainer.appendChild(tabsContents);
+    //     document.body.appendChild(tabsContainer);
+    //
+    //     function switchTabs(index) {
+    //         const allTabsHead = document.querySelectorAll('.tab');
+    //         const allContents = document.querySelectorAll('.tab-content');
+    //         allTabsHead.forEach(tab => tab.classList.remove('active'))
+    //         allContents.forEach(tab => tab.classList.remove('active'))
+    //
+    //
+    //         const selectTab = document.querySelector(`.tab[data-tab="${ index }"]`);
+    //         const selectContent = document.getElementById(`tab-${ index }`);
+    //         selectTab.classList.add('active')
+    //         selectContent.classList.add('active')
+    //         setActiveTab(index)
+    //     }
+    //
+    //     function setActiveTab(i) {
+    //         const url = new URL(window.location);
+    //         url.searchParams.set('tab', i);
+    //         window.history.pushState({}, '', url);
+    //     }
+    //
+    //     function getActiveTab() {
+    //         const qy = new URLSearchParams(window.location.search)
+    //         const id = qy.get('tab')
+    //         switchTabs(id)
+    //
+    //     }
+    //
+    //     getActiveTab()
+    // })
+    // window.addEventListener('scroll', () => {
+    //     console.log(window.scrollY)
+    // })
+    // window.addEventListener('click', () => {
+    //     console.log(`Window size: ${window.innerWidth}x${window.innerHeight}`);
+    // });
+
+const box = document.getElementById('box');
+    box.addEventListener('mousemove', function () {
+        box.style.width = `300px`
+    })
+    box.addEventListener('mouseleave', function () {
+        box.style.width = `200px`
+        box.style.background = `red`
+    })
+    box.addEventListener('mouseenter', function () {
+        box.style.background = `blue`
+    })
+    box.addEventListener('mouseup', function () {
+        box.style.height = `100px`
+    })
+    box.addEventListener('mousedown', function () {
+        box.style.height = `400px`
+    })
+</script>
+
+
+</body>
+</html>
