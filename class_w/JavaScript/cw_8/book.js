@@ -1,22 +1,4 @@
-const bookItem = [
-    {
-        title: 'Book Title',
-        autor: 'Book autor',
-        imgUrl: '',
-        id: '1234-4321',
-        fav: false,
-        description: 'description',
-        text: 'text book text',
-    }, {
-        title: 'Book Title1',
-        autor: 'Book autor2',
-        imgUrl: '',
-        id: '1234-4321323',
-        fav: true,
-        description: 'description1',
-        text: 'text book text1',
-    },
-]
+let bookItem = []
 
 function createAside() {
     const formFild = [
@@ -24,32 +6,33 @@ function createAside() {
             title: 'Book Title',
             placeholder: 'Enter Book Title',
             type: 'text',
-            name: 'title'
+            name: 'title',
+            req: true
         }, {
             title: 'Book Autor',
             placeholder: 'Enter Book Autor',
             type: 'text',
-            name: 'autor'
+            name: 'autor',
+            req: true
         }, {
-            title: 'Select Book Img',
+            title: 'Select Book Image',
             placeholder: null,
             type: 'file',
-            name: 'img'
+            name: 'img',
+            req: false
         },
     ]
     const form = document.createElement('form');
     formFild.forEach(f => {
-        const field = createFormRow(f.title, f.type,f.name, f.placeholder);
+        const field = createFormRow(f.title, f.type, f.name, f.placeholder, f.req);
         form.append(field);
     })
 
     const label = document.createElement('label');
     label.innerHTML = `
     <label>
-                <input name="id" type="text">
-                <button type="button">set ID</button>
-                or
-                <button type="button">radnom ID</button>
+                <input required name="randomID" type="text">
+                <button onclick="generateRandomID(16, '_random_')" type="button">radnom ID</button>
             </label>
             <div class="form-action">
                 <button type="submit">create book</button>
@@ -59,7 +42,7 @@ function createAside() {
     return form;
 };
 
-function createFormRow(title, type = 'text',name = null, placeholder = null) {
+function createFormRow(title, type = 'text', name = null, placeholder = null, req = false) {
     // Продумати, як можна додати до типу файл , фільтер що це картинки
 
     const divFormRow = document.createElement("div");
@@ -69,8 +52,29 @@ function createFormRow(title, type = 'text',name = null, placeholder = null) {
     if (placeholder) {
         input.placeholder = placeholder;
     }
-    if(name){
+    if (name) {
         input.name = name;
+    }
+    input.required = req;
+    if (type === 'file') {
+        input.hidden = true;
+        label.classList.add('select_img');
+        // 2_HW  зробити видаляння поточної картинки, та повернення тексту назат
+        input.addEventListener('change', function (e) {
+            const files = e.target.files;
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.classList.add('imgViev');
+                    label.innerHTML = ``;
+                    label.prepend(img);
+                }
+                reader.readAsDataURL(file);
+            }
+        })
     }
     input.type = type;
     label.append(title);
@@ -90,6 +94,8 @@ function createMainConteiner() {
     div.appendChild(aside);
     div.appendChild(right);
     document.getElementsByTagName("body")[0].appendChild(div);
+    createBookFromForm();
+
 };
 
 createMainConteiner();
@@ -130,9 +136,11 @@ function createRightContainer() {
 
 function createItem(item) {
     const itemDiv = createElement('div', 'item');
-    itemDiv.id = item.id;
+    itemDiv.id = item.randomID;
     // коли нема посилання на картинку. встановити дефолт Картинку
     // подумати як зробити img
+    const classFav = item.fav ? 'item-fav item-fav-active' : 'item-fav';
+
     itemDiv.innerHTML = `
     <div class="item-info">
          <div class="item-img">
@@ -144,25 +152,70 @@ function createItem(item) {
          </div>
      </div>
      <div class="item-controll">
-     <label>fav<input value="${ item.fav }" type="checkbox"></label>
-         <button>edit</button>
-         <button>del</button>
+        <label class="${ classFav }">fav<input hidden="" onclick="updateItemFav('${ itemDiv.id }')" value="${ item.fav }" type="checkbox"></label>
+         <button onclick="editItem('${ itemDiv.id }')">edit</button>
+         <button onclick="deleteItem('${ itemDiv.id }')">del</button>
      </div>
     `;
 
     return itemDiv;
 }
-function createBookFromForm(){
+
+function createBookFromForm() {
     const form = document.querySelector('form');
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const book = {}
-    for (const [key, value] of formData.entries()) {
-        book[key] = value;
-    }
-    console.log(book);
-});
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const book = {
+            fav: false,
+            description: '',
+            text: '',
+        }
+        for (const [key, value] of formData.entries()) {
+
+            book[key] = value;
+        }
+        setItemByStorage(book);
+        bookItem.push(book);
+        updateItemList();
+        form.reset();
+    });
 }
-createBookFromForm()
+
+function updateItemList() {
+    const list = document.querySelector('.item-list');
+    list.innerHTML = '';
+    bookItem.forEach((item) => {
+        list.append(createItem(item));
+    })
+}
+
+function generateRandomID(length, prefix) {
+    const charts = 'QWERTYUIOPLKJHGFDSAZXVBVBNNMqwertyuioplkjhgfdsazxvbvbnnm1234567890';
+    let id = prefix;
+    for (let i = 0; i < length; i++) {
+        id += charts.charAt(Math.floor(Math.random() * charts.length));
+    }
+    document.querySelector('input[name="randomID"]').value = id;
+}
+
+function setItemByStorage(item) {
+    localStorage.setItem('items', JSON.stringify([item]));
+}
+
+function updateItemFav(id) {
+    bookItem.forEach((item) => item.randomID === id && (item.fav = !item.fav));
+
+    updateItemList();
+}
+
+function deleteItem(id) {
+    bookItem=   bookItem.filter(item => item.randomID !== id);
+    updateItemList();
+}
+
+function editItem(id) {
+    const mainContainer= document.querySelector('.main-container');
+    mainContainer.innerHTML = ``;
+}
