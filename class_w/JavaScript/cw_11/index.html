@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="main-contaner">
+    <div class="controls">
+        <label>
+            <input type="text" id="timeInput">
+        </label>
+        <button id="startButton">Start</button>
+        <div class="scores">
+            <div class="score">
+                <span>Player:</span>
+                <span id="playerScore">0</span>
+            </div>
+            <div class="score">
+                <span>PC:</span>
+                <span id="pcScore">0</span>
+            </div>
+        </div>
+    </div>
+    <div class="grid" id="gameGrid">
+
+    </div>
+</div>
+<div id="modal" class="modal-overlay">
+    <div class="modal">
+        <h2 class="modal-title">Game End</h2>
+        <div id="modalMessage"></div>
+        <button id="modalClose">Close</button>
+    </div>
+</div>
+
+</body>
+</html>
