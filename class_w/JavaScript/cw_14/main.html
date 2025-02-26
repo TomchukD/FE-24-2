@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #todo{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .todo-item{
+        display: flex;
+        width: 200px;
+        justify-content: space-between;
+        background: greenyellow;
+    }
+    .todo-item.completed{
+        background: blueviolet;
+    }
+</style>
+<body>
+<h1>Todo</h1>
+<form id="form">
+    <label>
+        <input id='input' type="text">
+    </label>
+    <button>Add</button>
+</form>
+<ul id="todo">
+
+</ul>
+<!--<script type="module" src="m1.js"></script>-->
+<script type="module" src="m2.js"></script>
+<script type="module" src="m3.js"></script>
+</body>
+</html>
