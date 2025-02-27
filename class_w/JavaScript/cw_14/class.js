@@ -57,4 +57,3 @@ const owner1 = new BankAccount('Dima');
 owner1.deposit(10);
 console.log(owner1.getBalance());
 // console.log(owner1.#balans);
-
