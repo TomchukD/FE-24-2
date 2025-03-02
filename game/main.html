@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<div class="screen" id="charter-create">
+    <div class="charter-form">
+        <h2>Player 1</h2>
+        <form id="player1">
+            <label>
+                <input type="text" name="player1" id="player1-name">
+            </label>
+            <label>
+                <select name="classes">
+                    <option value="mage">Mage</option>
+                    <option value="warrior">Warrior</option>
+                    <option value="assassine">Assassine</option>
+                    <option value="healer">Healer</option>
+                    <option value="hunter">Hunter</option>
+                </select>
+            </label>
+            <div class="stats">
+                <h3>Characters points: <span  class="point-left">10</span></h3>
+                <div class="stat-item">
+                    <label>HP</label>
+                    <button type='button' class="plus" data-stat="hp">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="hp">-</button>
+                </div>
+                <div class="stat-item">
+                    <label>attack</label>
+                    <button type='button' class="plus" data-stat="attack">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="attack">-</button>
+                </div>
+                <div class="stat-item">
+                    <label>defense</label>
+                    <button type='button' class="plus" data-stat="defense">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="defense">-</button>
+                </div>
+                <div class="stat-item">
+                    <label>dodge</label>
+                    <button type='button' class="plus" data-stat="dodge">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="dodge">-</button>
+                </div>
+
+                <div class="stat-item">
+                    <label>criticalDamage</label>
+                    <button type='button' class="plus" data-stat="criticalDamage">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="criticalDamage">-</button>
+                </div>
+                <div class="stat-item">
+                    <label>speed</label>
+                    <button type='button' class="plus" data-stat="speed">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="speed">-</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="charter-form">
+        <h2>Player 2</h2>
+        <form id="player2">
+            <label>
+                <input type="text" name="player2" id="player2-name">
+            </label>
+            <label>
+                <select name="classes">
+                    <option value="mage">Mage</option>
+                    <option value="warrior">Warrior</option>
+                    <option value="assassine">Assassine</option>
+                    <option value="healer">Healer</option>
+                    <option value="hunter">Hunter</option>
+                </select>
+            </label>
+            <div class="stats">
+                <h3>Characters points: <span class="point-left">10</span></h3>
+                <div class="stat-item">
+                    <label>HP</label>
+                    <button type='button' class="plus" data-stat="hp">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="hp">-</button>
+                </div>
+                <div class="stat-item">
+                    <label>attack</label>
+                    <button type='button' class="plus" data-stat="attack">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="attack">-</button>
+                </div>
+                <div class="stat-item">
+                    <label>defense</label>
+                    <button type='button' class="plus" data-stat="defense">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="defense">-</button>
+                </div>
+                <div class="stat-item">
+                    <label>dodge</label>
+                    <button type='button' class="plus" data-stat="dodge">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="dodge">-</button>
+                </div>
+
+                <div class="stat-item">
+                    <label>criticalDamage</label>
+                    <button type='button' class="plus" data-stat="criticalDamage">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="criticalDamage">-</button>
+                </div>
+                <div class="stat-item">
+                    <label>speed</label>
+                    <button type='button' class="plus" data-stat="speed">+</button>
+                    <span class="stat-value">0</span>
+                    <button type='button' class="minus" data-stat="speed">-</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <button id="start">Start Battle</button>
+</div>
+
+<script type="module" src="./scripts/main.js"></script>
+</body>
+</html>

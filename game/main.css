@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.screen {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.charter-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 16px;
+}
+.stats{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.stat-item {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.stat-item label {
+    width: 120px;
+}
+
+.stat-item button {
+    padding: 0 5px;
+}
