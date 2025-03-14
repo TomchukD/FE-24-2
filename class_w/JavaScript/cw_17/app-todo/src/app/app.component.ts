@@ -1,36 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { TodoListComponent } from 'src/app/todo-list/todo-list.component';
+import { HeaderLeyoutComponent } from 'src/app/components/header-leyout/header-leyout.component';
+import { LifeComponent } from 'src/app/components/life/life.component';
+import { SmartComponent } from 'src/app/components/smart/smart.component';
 
 @Component({
-    selector: 'td-root1',
-    imports: [
-        TodoListComponent
-    ],
-    template: `
-        <app-todo-list></app-todo-list>
-        <button [disabled]="isShow" (click)="onToggle()">{{ title }}</button>
-        {{ isShow }}
-    `,
-    styles: `
-        button {
-            color: red;
-        }
-    `
+  selector: 'td-root1',
+  imports: [HeaderLeyoutComponent, LifeComponent, SmartComponent],
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-    public title = 'app-todo';
-
-    private show = false;
-
-    public onToggle(): void {
-        this.show = !this.show;
-        setTimeout(()=>{
-            this.show = !this.show;
-        },3000)
-    }
-
-    public get isShow(): boolean {
-      return this.show;
-    }
+  hide = false;
+  changes = 'Tomchuk';
+  constructor() {
+    setTimeout(() => {
+      this.hide = true;
+      this.changes = 'Tomchuk DIMA';
+    }, 3000);
+  }
 }
