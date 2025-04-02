@@ -4,7 +4,7 @@ import { Inject } from '@angular/core';
 
 export abstract class BaseService {
     readonly baseUrl = 'http://localhost:8080';
-    readonly http = Inject(HttpClient)
+    http = Inject(HttpClient)
 
     handleError(error: HttpErrorResponse) {
         return throwError(error.status)

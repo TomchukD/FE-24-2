@@ -1,0 +1,9 @@
+<div [style.background-color]="highlight ? 'lightgreen' : ''">
+  <h2>parent Component</h2>
+  <button (click)="toggleDS()">Change D S</button>
+  <button (click)="updateChildren()">updateChildren</button>
+  <p>Now {{ strategy }}</p>
+
+  <fe-child [name]="strategy"/>
+  <fe-child name="Child 2"/>
+</div>
