@@ -1,0 +1,19 @@
+<button (click)="load()">load</button>
+
+@if (loading$ | async) {
+    <div>
+        loadding...
+    </div>
+}
+<ul>
+    @for (u of users$ | async; track u.id) {
+        <li>{{ u.name }}</li>
+    }
+</ul>
+
+<!--<button routerLink="/">home</button>-->
+<!--<button routerLink="homeOne">one</button>-->
+<!--<router-outlet/>-->
+<app-home/>
+<app-home/>
+<app-home/>
