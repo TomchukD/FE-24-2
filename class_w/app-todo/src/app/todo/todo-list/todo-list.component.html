@@ -1,8 +1,0 @@
-
-<div class="todo-list">
-  @for (item of items; track item.id) {
-    <fe-todo-item [item]="item" (onDelete)="onDeleteItem($event)"/>
-  } @empty {
-    list empty
-  }
-</div>
