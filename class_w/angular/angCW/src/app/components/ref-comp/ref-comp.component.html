@@ -1,0 +1,12 @@
+<div style="display: flex; gap: 8px; padding: 15px">
+
+
+@for (item of config; track item) {
+    <!--<ng-container appMonitor [appMonitorCompoennt]="item.component"></ng-container>-->
+    @if (item.component) {
+        <ng-container *ngComponentOutlet="item.component; inputs: {data: item.data}"></ng-container>
+    } @else {
+        {{ item.data }}
+    }
+}
+</div>

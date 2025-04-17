@@ -1,0 +1,16 @@
+<mat-toolbar>
+    <div>
+        <button mat-stroked-button [routerLink]="[appRoutes.HOME]">Home</button>
+        <button mat-stroked-button [routerLink]="[appRoutes.LOGIN]">Login</button>
+        <button mat-stroked-button [routerLink]="[appRoutes.REGISTRATION]">Reg</button>
+        <button mat-stroked-button [routerLink]="[appRoutes.SHOP]">Shop</button>
+    </div>
+    <div>
+        <button mat-icon-button (click)="loginService.logout()">
+            <mat-icon>
+                logout
+            </mat-icon>
+        </button>
+    </div>
+
+</mat-toolbar>

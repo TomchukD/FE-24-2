@@ -1,0 +1,24 @@
+<button mat-stroked-button>text</button>
+<button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>apps</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onRout('google.com')">Item 1</button>
+    <button mat-menu-item (click)="onRout('google.ua')">Item 2</button>
+</mat-menu>
+
+<mat-divider></mat-divider>
+<br>
+<form style="display: flex; flex-direction: column; gap: 8px">
+
+    <mat-form-field appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input matInput placeholder="Name USer">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>User PAsseord</mat-label>
+        <input matInput type="password">
+    </mat-form-field>
+    <mat-checkbox>I read the text ......</mat-checkbox>
+    <button mat-flat-button>sand</button>
+</form>

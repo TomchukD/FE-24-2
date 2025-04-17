@@ -1,0 +1,83 @@
+<!--<app-example appHightlight [val]="value"></app-example>-->
+<!--@if (visible) {-->
+<!--    <ng-container *ngTemplateOutlet="templateRef"></ng-container>-->
+<!--} @else {-->
+<!--    <p>hello</p>-->
+<!--}-->
+
+<button (click)="onVisible()">visible</button>
+
+<ng-template #templateRef>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laboriosam molestias nesciunt quaerat, quis
+        vitae voluptas? Cumque deleniti eligendi ipsa labore molestias obcaecati praesentium quaerat veritatis vitae
+        voluptate. Accusantium, cupiditate?</p>
+</ng-template>
+<!--<ng-container *ngIf="!visible;else templateRef">-->
+<!--    <p>hello</p>
+</ng-container>-->
+<br>
+<br>
+<ng-template #selectHEader>
+    <select [(ngModel)]="selectHeader">
+        <option [value]="1">1</option>
+        <option [value]="2">2</option>
+        <option [value]="3">3</option>
+        <option [value]="4">4</option>
+    </select>
+</ng-template>
+<ng-template #selectHEader2>
+    <input type="text">
+</ng-template>
+{{ selectHeader | json }}
+@switch (selectHeader) {
+    @case ('1') {
+        <app-parent>
+            <div app-left>
+                <ng-container *ngTemplateOutlet="selectHEader"></ng-container>
+                <ng-container *ngTemplateOutlet="selectHEader2"></ng-container>
+            </div>
+            <div app-right>
+                first
+            </div>
+        </app-parent>
+    }
+    @case ('2') {
+        <app-parent>
+            <div app-left>
+                <ng-container *ngTemplateOutlet="selectHEader"></ng-container>
+
+            </div>
+            <div app-right>
+                second
+            </div>
+        </app-parent>
+    }
+    @case ('3') {
+
+        <app-parent>
+            <div app-left>
+                <ng-container *ngTemplateOutlet="selectHEader"></ng-container>
+
+                theee
+            </div>
+        </app-parent>
+    }
+    @case ('4') {
+        <app-parent>
+            <div app-left>
+                <ng-container *ngTemplateOutlet="selectHEader"></ng-container>
+
+            </div>
+            <div app-right>
+
+                four
+            </div>
+        </app-parent>
+
+    }
+}
+
+<app-ref-comp></app-ref-comp>
+
+
+<app-material/>

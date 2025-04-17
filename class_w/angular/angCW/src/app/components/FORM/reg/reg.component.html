@@ -1,0 +1,33 @@
+<div [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input formControlName="userName" matInput>
+        @if (userName.hasError('required')) {
+            <mat-error>filed must ...</mat-error>
+        }
+        @if (userName.hasError('minlength')) {
+            <mat-error>min langth</mat-error>
+        }
+    </mat-form-field>
+    <mat-radio-group formControlName="selectChoose">
+        <mat-radio-button value="1">Option 1</mat-radio-button>
+        <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+    <div formArrayName="address">
+        @for (control of address.controls; track $index) {
+            <div [formGroupName]="$index">
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone</mat-label>
+                    <input formControlName="phone" matInput>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>ZIP Code</mat-label>
+                    <input formControlName="zip" matInput>
+                </mat-form-field>
+            </div>
+        }
+        <button mat-icon-button (click)="addNewForm()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<nav>
+    <mat-toolbar>
+        <ol class="breadcrumb">
+            <li>
+                <a routerLink="/" >Home</a>
+            </li>
+            @for (item of items; track item) {
+                <li>
+                    <a [routerLink]="item.url" >{{item.label}}</a>
+                </li>
+            }
+        </ol>
+    </mat-toolbar>
+</nav>

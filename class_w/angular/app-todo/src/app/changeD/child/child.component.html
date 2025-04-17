@@ -1,0 +1,5 @@
+<div [style.background-color]="highlight ? 'blue' : ''">
+  <h3>{{ name }}</h3>
+  <button (click)="triggerChanD()">start CD</button>
+  <p>last update {{ lastUpdate| date: 'mediumTime' }}</p>
+</div>

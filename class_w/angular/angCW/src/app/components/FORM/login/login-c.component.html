@@ -1,0 +1,11 @@
+<form #loginForm='ngForm' style="display: flex; flex-direction: column" (ngSubmit)="inSubmin(loginForm)">
+    <mat-form-field appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input id='userName' ngModel required name="userName" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput ngModel id='password' required name="password">
+    </mat-form-field>
+    <button mat-stroked-button> enter</button>
+</form>

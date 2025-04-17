@@ -1,0 +1,10 @@
+
+.header{
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+}
+.header-left, .header-right{
+    display: flex;
+    align-items: center;
+}
